@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --btn-color: hsl(234, 29%, 20%);
+  --bg-color: hsl(235, 18%, 26%);
+  --text: hsl(234, 29%, 20%);
+  --btn-hover: linear-gradient(
+    to right,
+    hsl(336.37deg 100% 62.54%),
+    hsl(4, 100%, 67%)
+  );
+  --error: hsl(4, 100%, 67%);
+  --error-bg: hsl(4deg 100% 96.07%);
+}
+html,
+body {
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text);
+}
+
+.main-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-container {
+  border-radius: 20px;
+  background-color: white;
+  padding: 20px;
+  width: 800px;
+  height: 60vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5%;
+}
+
+/* Mail section */
+
+.section1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 50%;
+  padding: 0 30px;
+}
+
+.head h1 {
+  font-size: 50px;
+  margin: 10px 0;
+}
+.section1 .desc {
+  margin: 15px 0;
+}
+.section1 .desc-list {
+  margin: 10px 0;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
+.mailbox form {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Input and Submit button  */
+
+.mailbox label,
+.mailbox div .error {
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+form .error-box {
+  display: flex;
+  justify-content: space-between;
+}
+.mailbox div .error {
+  color: var(--error);
+  display: none;
+}
+#mail {
+  outline: none;
+  border: 1px solid grey;
+  padding: 15px 30px;
+  border-radius: 10px;
+}
+.submit-btn {
+  background-color: var(--btn-color);
+  color: white;
+  padding: 15px 0;
+  cursor: pointer;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  width: 100%;
+  font-weight: bold;
+  margin-top: 30px;
+  transition: all 0.3s linear;
+}
+.submit-btn:hover {
+  background: var(--btn-hover);
+}
+
+/* Setting up Image */
+
+.section2,
+.section2 img {
+  height: 100%;
+}
+.mobile-section {
+  width: 100%;
+  display: none;
+}
+.mobile-section img {
+  width: 100%;
+}
+
+/* Success Message Window */
+
+.success-msg {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+.success-container {
+  background-color: white;
+  padding: 50px;
+  border-radius: 10px;
+  width: 400px;
+}
+.msg {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.msg img {
+  width: 50px;
+}
+.msg h1 {
+  font-size: 40px;
+}
+.dynamic-mail {
+  font-weight: bold;
+}
+
+/* Responsive UI settings */
+
+@media screen and (max-width: 760px) {
+  .form-container {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    border-radius: 0;
+  }
+  .section1 {
+    width: 100%;
+    display: block;
+  }
+  .section2 {
+    display: none;
+  }
+  .mobile-section {
+    display: block;
+  }
+  .success-container {
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 100px 30px 20px;
+  }
+}
